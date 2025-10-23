@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <!-- !elelment racine-->
+    <xs:element name="soins">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- !element consultations-->
+                <xs:element name="consultations" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <!-- todo: sous element consultations-->
+                            <xs:element name="consultation" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <!-- *element id consultation-->
+                                        <xs:element name="id_consultation">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:pattern
+                                                        value="CONST-YYYYMMDD-[A-Za-z0-9]{4}"></xs:pattern>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <!-- *fin element id consultation-->
+
+                                        <!-- *element date et heure-->
+                                        <xs:element name="date_heure" type="xs:dateTime"></xs:element>
+
+                                        <!-- *element numero du patient -->
+                                        <xs:element name="numero">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:pattern value="PAT-[A-Za-z0-9]{8}"></xs:pattern>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <!-- *fin element numero du patient -->
+
+                                        <!-- *element matricule-->
+                                        <xs:element name="matricule">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:pattern value="MED-[A-Za-z0-9]{5}"></xs:pattern>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <!-- *fin element matricule-->
+
+                                        <!-- *element motif consultation-->
+                                        <xs:element name="motif_consultation" type="xs:string"></xs:element>
+
+                                        <!-- *element symptomes-->
+                                        <xs:element name="symptomes">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="symptome" type="xs:string"
+                                                        minOccurs="1"
+                                                        maxOccurs="10"></xs:element>
+
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <!-- *element diagnostic-->
+                                        <xs:element name="diagnoctic" type="xs:string"></xs:element>
+
+                                        <!-- *element prescription -->
+                                        <xs:element name="prescription" minOccurs="0"
+                                            maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <!-- ?sous element prescription -->
+                                                <xs:sequence>
+                                                    <!-- *element nom medicament-->
+                                                    <xs:element name="nom_medicament"
+                                                        type="xs:string"></xs:element>
+
+                                                    <!-- *element dosage-->
+                                                    <xs:element name="dosage" type="xs:string"></xs:element>
+
+                                                    <!-- *element posologie-->
+                                                    <xs:element name="posologie" type="xs:string"></xs:element>
+
+                                                    <!-- *element duree traitement-->
+                                                    <xs:element name="duree_traitement"
+                                                        type="xs:string"></xs:element>
+                                                </xs:sequence>
+                                                <!-- ?fin sous element prescription -->
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <!-- *fin element prescription -->
+
+                                        <!-- *element examens demander-->
+                                        <xs:element name="examens_demander" type="xs:string"
+                                            minOccurs="0" maxOccurs="unbounded"></xs:element>
+
+                                        <!-- *element prochain rendez-vous -->
+                                        <xs:element name="prochain_rdv" type="xs:date"
+                                            minOccurs="0"></xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <!-- todo; fin sous element consultations-->
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <!-- !fin element consultations-->
+
+                <!-- !element examens medicaux-->
+                <xs:element name="examens_medicaux" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <!-- ?element examen medical-->
+                            <xs:element name="examen_medical" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <!-- todo: sous element examen medical-->
+                                    <xs:sequence>
+
+                                        <!-- *element id examen-->
+                                        <xs:element name="id_examen">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:pattern value="EXAM-[a-zA-Z0-9]{8}"></xs:pattern>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <!-- *fin element id examen-->
+
+                                        <!-- *element type analyse-->
+                                        <xs:element name="type">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="Analyse de sang"></xs:enumeration>
+                                                    <xs:enumeration value="Radiographie"></xs:enumeration>
+                                                    <xs:enumeration value="IRM"></xs:enumeration>
+                                                    <xs:enumeration value="Scanner"></xs:enumeration>
+                                                    <xs:enumeration value="Echographie"></xs:enumeration>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <!-- *fin element type analyse-->
+
+                                        <!-- *element date realisation-->
+                                        <xs:element name="date_realisation" type="xs:date"></xs:element>
+
+                                        <!-- *element numero du patient -->
+                                        <xs:element name="numero">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:pattern value="PAT-[A-Za-z0-9]{8}"></xs:pattern>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <!-- *fin element numero du patient -->
+
+                                        <!-- *element resultat-->
+                                        <xs:element name="resultat" type="xs:string"></xs:element>
+
+                                        <!-- *element commentaire technicien-->
+                                        <xs:element name="commentaire_technicien" type="xs:string"></xs:element>
+
+                                        <!-- *element urgent-->
+                                        <xs:element name="urgent" type="xs:boolean"></xs:element>
+
+                                    </xs:sequence>
+                                    <!-- todo: fin sous element examen medical-->
+                                </xs:complexType>
+                            </xs:element>
+                            <!-- ?fin element examen medical-->
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <!-- !fin element examens medicaux-->
+
+                <!-- !element hospitalisations-->
+                <xs:element name="hospitalisations" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <!-- ?element hospitalisation-->
+                            <xs:element name="hospitalisation" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <!-- todo: sous elements hospitalisation -->
+                                    <xs:sequence>
+
+                                        <!-- *element numero admission-->
+                                        <xs:element name="numero_admission" type="xs:integer"></xs:element>
+
+                                        <!-- *element date admission-->
+                                        <xs:element name="date_admission" type="xs:dateTime"></xs:element>
+
+                                        <!-- *element date sortie prevue-->
+                                        <xs:element name="date_sortie_prevue" type="xs:date"
+                                            minOccurs="0"></xs:element>
+
+                                        <!-- *element date sortie effective-->
+                                        <xs:element name="date_sortie_effective" type="xs:date"
+                                            minOccurs="0"></xs:element>
+
+                                        <!-- *element service-->
+                                        <xs:element name="service" type="xs:string"></xs:element>
+
+                                        <!-- *element chambre-->
+                                        <xs:element name="chambre" type="xs:integer"></xs:element>
+
+                                        <!-- *element medecin responsable-->
+                                        <xs:element name="medecin_responsable" type="xs:string"></xs:element>
+
+                                        <!-- *element motif hospitalisation-->
+                                        <xs:element name="motif_hospitalisation" type="xs:string"></xs:element>
+
+                                        <!-- *element notes quotidiennes-->
+                                        <xs:element name="notes_quotidiennes" type="xs:string"
+                                            minOccurs="0" maxOccurs="unbounded"></xs:element>
+                                    </xs:sequence>
+                                    <!-- todo: fin sous elements hospitalisation -->
+                                </xs:complexType>
+                            </xs:element>
+                            <!-- ?fin element hospitalisation-->
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <!-- !fin element hospitalisations-->
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- !elelment racine-->
+</xs:schema>

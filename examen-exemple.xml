@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soins xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="hopital.xsd">
+
+    <examens_medicaux>
+        <examen_medical>
+            <id_examen>EXAM-NM000001</id_examen>
+            <type>Analyse de sang</type>
+            <date_realisation>20025-03-21</date_realisation>
+            <numero>PAT-mat00003</numero>
+            <resultat>Hemoglobine normal, globules blancs un peu eleve, plaquette normales</resultat>
+            <commentaire_technicien>surveiller les globules blanc lors du prochain test</commentaire_technicien>
+            <urgent>true</urgent>
+        </examen_medical>
+
+        <examen_medical>
+            <id_examen>EXAM-NM000002</id_examen>
+            <type>IRM</type>
+            <date_realisation>20025-09-15</date_realisation>
+            <numero>PAT-mat00001</numero>
+            <resultat>Presence d'une petite lesion suspecte au lobe frontal</resultat>
+            <commentaire_technicien>Consultion neurologique urgente recommandee</commentaire_technicien>
+            <urgent>true</urgent>
+        </examen_medical>
+
+        <examen_medical>
+            <id_examen>EXAM-NM000003</id_examen>
+            <type>Radiographie</type>
+            <date_realisation>20025-06-01</date_realisation>
+            <numero>PAT-mat00004</numero>
+            <resultat>pas d'anomalie pulmonaire ni cardiaque detectee</resultat>
+            <commentaire_technicien>examen normal, pas de suivi particulier</commentaire_technicien>
+            <urgent>false</urgent>
+        </examen_medical>
+
+    </examens_medicaux>
+
+</soins>

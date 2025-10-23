@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soins xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="hopital.xsd">
+    <consultations>
+        <consultation>
+            <id_consultation>CONST-YYYYMMDD-0001</id_consultation>
+            <date_heure>2025-10-22T18:30:45</date_heure>
+            <numero>PAT-mat00003</numero>
+            <matricule>MED-O2002</matricule>
+            <motif_consultation>Toux peristante et fievre</motif_consultation>
+            <symptomes>
+                <symptome>maux de tete</symptome>
+                <symptome>fievre</symptome>
+            </symptomes>
+            <diagnoctic>Bronchite aigue</diagnoctic>
+            <prescription>
+                <nom_medicament>Amoxicilline</nom_medicament>
+                <dosage>500mg</dosage>
+                <posologie>1 comprime si fievre ou douleur (maximum 3fois par jour)</posologie>
+                <!-- !(5jours) type dayTimeDuration non accepter par l'IDE-->
+                <duree_traitement>P5D</duree_traitement>
+            </prescription>
+            <examens_demander>Radiographie thoracique</examens_demander>
+            <examens_demander>Numeration formule sanguine</examens_demander>
+            <prochain_rdv>2025-11-05</prochain_rdv>
+        </consultation>
+
+        <consultation>
+            <id_consultation>CONST-YYYYMMDD-0002</id_consultation>
+            <date_heure>2025-10-31T08:00:45</date_heure>
+            <numero>PAT-mat00002</numero>
+            <matricule>MED-O2005</matricule>
+            <motif_consultation>Douleur abdominal et nausee</motif_consultation>
+            <symptomes>
+                <symptome>douleur au ventre</symptome>
+                <symptome>nausee</symptome>
+                <symptome>perte d'appetit</symptome>
+            </symptomes>
+            <diagnoctic>gastro uterine</diagnoctic>
+            <prescription>
+                <nom_medicament>Smecta</nom_medicament>
+                <dosage>3g</dosage>
+                <posologie>1 sachet 3fois par jour</posologie>
+                <!-- !(6jours) type dayTimeDuration non accepter par l'IDE-->
+                <duree_traitement>P6D</duree_traitement>
+            </prescription>
+            <prochain_rdv>2025-12-29</prochain_rdv>
+        </consultation>
+
+        <consultation>
+            <id_consultation>CONST-YYYYMMDD-0003</id_consultation>
+            <date_heure>2025-08-12T09:00:45</date_heure>
+            <numero>PAT-mat00001</numero>
+            <matricule>MED-O2006</matricule>
+            <motif_consultation>Maux de tete frequents</motif_consultation>
+            <symptomes>
+                <symptome>cephalees</symptome>
+                <symptome>visions flou</symptome>
+                <symptome>fatigue oculaire</symptome>
+            </symptomes>
+            <diagnoctic>migraine</diagnoctic>
+            <prescription>
+                <nom_medicament>ibuprofene</nom_medicament>
+                <dosage>400g</dosage>
+                <posologie>1 comprime toutes les 6h si douleur</posologie>
+                <!-- !(5jours) type dayTimeDuration non accepter par l'IDE-->
+                <duree_traitement>P5D</duree_traitement>
+            </prescription>
+        </consultation>
+
+        <consultation>
+            <id_consultation>CONST-YYYYMMDD-0004</id_consultation>
+            <date_heure>2025-02-20T08:00:00</date_heure>
+            <numero>PAT-mat00004</numero>
+            <matricule>MED-O2000</matricule>
+            <motif_consultation>brulure lors de la miction</motif_consultation>
+            <symptomes>
+                <symptome>douleur urinaire</symptome>
+                <symptome>sensation de brulure</symptome>
+            </symptomes>
+            <diagnoctic>infection urinaire</diagnoctic>
+            <prescription>
+                <nom_medicament>Furadantine</nom_medicament>
+                <dosage>100g</dosage>
+                <posologie>1 gelule matin et soir</posologie>
+                <!-- !(7jours) type dayTimeDuration non accepter par l'IDE-->
+                <duree_traitement>P7D</duree_traitement>
+            </prescription>
+            <examens_demander>ECBU</examens_demander>
+            <prochain_rdv>2025-03-19</prochain_rdv>
+        </consultation>
+
+    </consultations>
+</soins>

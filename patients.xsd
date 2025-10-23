@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Patients">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- !element patient-->
+                <xs:element name="patient" minOccurs="1" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+
+                            <!-- *element numero du patient -->
+                            <xs:element name="numero">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="PAT-[A-Za-z0-9]{8}"></xs:pattern>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <!-- *fin element numero du patient -->
+
+                            <!-- *element etat civile-->
+                            <xs:element name="etat_civil">
+                                <xs:complexType>
+                                    <!-- ?sous element etat civil-->
+                                    <xs:sequence>
+                                        <xs:element name="nom" type="xs:string"></xs:element>
+                                        <xs:element name="prenom" type="xs:string"></xs:element>
+                                        <xs:element name="date_naissance" type="xs:date"></xs:element>
+                                        <xs:element name="sexe">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="masculin"></xs:enumeration>
+                                                    <xs:enumeration value="feminin"></xs:enumeration>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                                <!-- ?fin sous element etat civil-->
+                            </xs:element>
+                            <!-- *fin element etat civile-->
+
+                            <!-- *element CNI ou passeport -->
+                            <xs:choice>
+                                <xs:element name="cni" type="xs:integer"></xs:element>
+                                <xs:element name="passeport" type="xs:integer"></xs:element>
+                            </xs:choice>
+                            <!-- *fin element CNI ou passeport-->
+
+                            <!-- *element groupe sanguin-->
+                            <xs:element name="groupe_sanguin">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="A+"></xs:enumeration>
+                                        <xs:enumeration value="A-"></xs:enumeration>
+                                        <xs:enumeration value="B+"></xs:enumeration>
+                                        <xs:enumeration value="B-"></xs:enumeration>
+                                        <xs:enumeration value="AB+"></xs:enumeration>
+                                        <xs:enumeration value="AB-"></xs:enumeration>
+                                        <xs:enumeration value="O+"></xs:enumeration>
+                                        <xs:enumeration value="O-"></xs:enumeration>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <!-- *fin element groupe sanguin-->
+
+                            <!-- *element contacts d'urgence-->
+                            <xs:element name="contact_urgence">
+                                <xs:complexType>
+                                    <!-- ?sous element contacts d'urgence-->
+                                    <xs:sequence>
+                                        <!-- *element nom-->
+                                        <xs:element name="nom" type="xs:string"></xs:element>
+
+                                        <!-- *element relation-->
+                                        <xs:element name="relation">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="parent"></xs:enumeration>
+                                                    <xs:enumeration value="frere/soeur"></xs:enumeration>
+                                                    <xs:enumeration value="fils/fille"></xs:enumeration>
+                                                    <xs:enumeration value="conjoint(e)"></xs:enumeration>
+                                                    <xs:enumeration value="ami(e)"></xs:enumeration>
+                                                    <xs:enumeration value="tuteur"></xs:enumeration>
+                                                    <xs:enumeration value="autre"></xs:enumeration>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <!-- *fin element relation-->
+
+                                        <!-- *element telephone-->
+                                        <xs:element name="telephone">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:pattern
+                                                        value="\+221 [37][0-9] [0-9]{3} [0-9]{2} [0-9]{2}"></xs:pattern>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <!-- *fin element telephone-->
+
+                                    </xs:sequence>
+                                </xs:complexType>
+                                <!-- ?fin sous element contacts d'urgence-->
+                            </xs:element>
+                            <!-- *fin element contacts d'urgence-->
+
+                            <!-- *element allergies connues -->
+                            <xs:element name="allergies_connues" type="xs:string" minOccurs="0"
+                                maxOccurs="unbounded"></xs:element>
+
+                            <!-- *element maladie chroniques-->
+                            <xs:element name="maladie_chroniques" type="xs:string" minOccurs="0"
+                                maxOccurs="unbounded"></xs:element>
+
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <!-- !fin element patient-->
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

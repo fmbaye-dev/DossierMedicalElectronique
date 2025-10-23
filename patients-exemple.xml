@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patients xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="hopital.xsd">
+    <patient>
+        <numero>PAT-mat00001</numero>
+        <etat_civil>
+            <nom>Ciss</nom>
+            <prenom>Ndeye Amy</prenom>
+            <date_naissance>2004-11-29</date_naissance>
+            <sexe>feminin</sexe>
+        </etat_civil>
+        <cni>1238294812958</cni>
+        <groupe_sanguin>O+</groupe_sanguin>
+        <contact_urgence>
+            <nom>Ndoye</nom>
+            <relation>parent</relation>
+            <telephone>+221 78 384 43 42</telephone>
+        </contact_urgence>
+        <maladie_chroniques>maux de tete</maladie_chroniques>
+    </patient>
+
+    <patient>
+        <numero>PAT-mat00002</numero>
+        <etat_civil>
+            <nom>Mbaye</nom>
+            <prenom>Fatou gaye</prenom>
+            <date_naissance>2005-04-09</date_naissance>
+            <sexe>feminin</sexe>
+        </etat_civil>
+        <cni>3923512055</cni>
+        <groupe_sanguin>O-</groupe_sanguin>
+        <contact_urgence>
+            <nom>Mbaye</nom>
+            <relation>frere/soeur</relation>
+            <telephone>+221 77 068 05 33</telephone>
+        </contact_urgence>
+        <maladie_chroniques>asthme</maladie_chroniques>
+    </patient>
+
+    <patient>
+        <numero>PAT-mat00003</numero>
+        <etat_civil>
+            <nom>Coly</nom>
+            <prenom>Cheikh</prenom>
+            <date_naissance>1997-07-25</date_naissance>
+            <sexe>masculin</sexe>
+        </etat_civil>
+        <cni>38217918410</cni>
+        <groupe_sanguin>AB+</groupe_sanguin>
+        <contact_urgence>
+            <nom>Ciss</nom>
+            <relation>conjoint(e)</relation>
+            <telephone>+221 78 461 02 34</telephone>
+        </contact_urgence>
+    </patient>
+
+    <patient>
+        <numero>PAT-mat00004</numero>
+        <etat_civil>
+            <nom>Barry</nom>
+            <prenom>Fatoumata Banna</prenom>
+            <date_naissance>2003-10-31</date_naissance>
+            <sexe>feminin</sexe>
+        </etat_civil>
+        <cni>2676573468069</cni>
+        <groupe_sanguin>AB+</groupe_sanguin>
+        <contact_urgence>
+            <nom>Mboup</nom>
+            <relation>conjoint(e)</relation>
+            <telephone>+221 71 234 09 00</telephone>
+        </contact_urgence>
+        <allergies_connues>poisson</allergies_connues>
+        <allergies_connues>fruits de mer</allergies_connues>
+        <maladie_chroniques>myopie</maladie_chroniques>
+    </patient>
+
+    <patient>
+        <numero>PAT-mat00005</numero>
+        <etat_civil>
+            <nom>Diaw</nom>
+            <prenom>Abdoulaye Sy</prenom>
+            <date_naissance>2004-09-16</date_naissance>
+            <sexe>masculin</sexe>
+        </etat_civil>
+        <cni>641259183</cni>
+        <groupe_sanguin>A+</groupe_sanguin>
+        <contact_urgence>
+            <nom>Mbaye</nom>
+            <relation>ami(e)</relation>
+            <telephone>+221 78 482 86 02</telephone>
+        </contact_urgence>
+    </patient>
+
+</Patients>
